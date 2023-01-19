@@ -55,6 +55,8 @@ namespace BulkyBookWeb.Controllers
             }
 
             var categoryFromDb = _db.categories.Find(id);
+            //var categoryFromDbFirst = _db.categories.FirstOrDefault(u => u.Name == "id");
+            //var categoryFromDbSingle = _db.categories.SingleOrDefault(u => u.Id == id);
 
             if(categoryFromDb == null)
             {
