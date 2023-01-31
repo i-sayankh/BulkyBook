@@ -3,7 +3,7 @@ using BulkyBook.DataAccess.Repository.IRepository;
 using BulkyBook.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BulkyBookWeb.Controllers
+namespace BulkyBookWeb.Areas.Admin.Controllers
 {
     public class CategoryController : Controller
     {
@@ -31,7 +31,7 @@ namespace BulkyBookWeb.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Category obj)
         {
-            if(obj.Name == obj.DisplayOrder.ToString())
+            if (obj.Name == obj.DisplayOrder.ToString())
             {
                 ModelState.AddModelError("CustomError", "The Display Order can't exactly match the Name.");
             }
@@ -50,16 +50,16 @@ namespace BulkyBookWeb.Controllers
         //GET
         public IActionResult Edit(int? id)
         {
-            if(id == null || id == 0)
+            if (id == null || id == 0)
             {
-                return NotFound();  
+                return NotFound();
             }
 
             //var categoryFromDb = _db.categories.Find(id);
             var categoryFromDbFirst = _unitOfWork.Category.GetFirstOrDefault(u => u.Id == id);
             //var categoryFromDbSingle = _db.categories.SingleOrDefault(u => u.Id == id);
 
-            if(categoryFromDbFirst == null)
+            if (categoryFromDbFirst == null)
             {
                 return NotFound();
             }
@@ -117,7 +117,7 @@ namespace BulkyBookWeb.Controllers
             {
                 return NotFound();
             }
-            
+
             _unitOfWork.Category.Remove(obj);
             _unitOfWork.Save();
             TempData["success"] = "Category deleted successfully";
