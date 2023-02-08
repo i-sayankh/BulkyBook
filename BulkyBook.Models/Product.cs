@@ -37,7 +37,7 @@ namespace BulkyBook.Models
         [Required]
         public int CategoryId { get; set; }
         [ValidateNever]
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
         [Required]
         public int CoverTypeId { get; set; }
         [ValidateNever]
