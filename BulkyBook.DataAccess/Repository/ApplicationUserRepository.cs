@@ -15,11 +15,6 @@ namespace BulkyBook.DataAccess.Repository
         public ApplicationUserRepository(ApplicationDBContext db) : base(db) 
         {
             _db = db;
-        }
-
-        public void Save()
-        {
-            _db.SaveChanges();
-        }        
+        }      
     }
 }

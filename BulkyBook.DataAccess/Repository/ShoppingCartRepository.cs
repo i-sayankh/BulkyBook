@@ -17,9 +17,16 @@ namespace BulkyBook.DataAccess.Repository
             _db = db;
         }
 
-        public void Save()
+        public int DecreamentCount(ShoppingCart shoppingCart, int count)
         {
-            _db.SaveChanges();
-        }        
+            shoppingCart.Count -= count;
+            return shoppingCart.Count;
+        }
+
+        public int IncreamentCount(ShoppingCart shoppingCart, int count)
+        {
+            shoppingCart.Count += count;
+            return shoppingCart.Count;
+        }       
     }
 }
