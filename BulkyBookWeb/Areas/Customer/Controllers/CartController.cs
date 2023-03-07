@@ -145,10 +145,17 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 
 			var service = new SessionService();
 			Session session = service.Create(options);
-
-			Response.Headers.Add("Location", session.Url);
+            _unitOfWork.OrderHeader.UpdateStripePaymentID(ShoppingCartVM.OrderHeader.Id, session.Id, session.PaymentIntentId);
+            _unitOfWork.Save();
+            Response.Headers.Add("Location", session.Url);
 			return new StatusCodeResult(303);			
 		}
+
+        public IActionResult OrderConfirmation(int id)
+        {
+            OrderHeader orderHeader = _unitOfWork.OrderHeader.GetFirstOrDefault(x => x.Id == id);
+            return View();
+        }
 
 		public IActionResult Plus(int cartId)
         {
