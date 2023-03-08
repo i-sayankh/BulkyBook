@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - BulkyBookWeb</title>    
+    <title>@ViewData["Title"] - BulkyBookWeb</title>
     <link rel="stylesheet" href="~/css/bootswatchTheme.css" />
     @*<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />*@
     <link rel="stylesheet" href="~/BulkyBookWeb.styles.css" asp-append-version="true" />
@@ -24,8 +24,8 @@
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
                             <a class="nav-link" asp-area="Customer" asp-controller="Home" asp-action="Index">Home</a>
-                        </li> 
-                        
+                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link" asp-area="Admin" asp-controller="Category" asp-action="Index">Category</a>
                         </li>
@@ -42,26 +42,30 @@
                             <a class="nav-link" asp-area="Admin" asp-controller="Company" asp-action="Index">Company</a>
                         </li>
 
-                        <li class="nav-item">  
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Admin" asp-controller="Order" asp-action="Index">Manage Order</a>
+                        </li>
+
+                        <li class="nav-item">
                             <a class="nav-link" asp-area="Customer" asp-controller="Cart" asp-action="Index">
                                 <i class="bi bi-cart"></i>
                             </a>
                         </li>
-                          
+
                         @*<li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Content Management</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" asp-area="Admin" asp-controller="Category" asp-action="Index">Category</a>
-                                <a class="dropdown-item" asp-area="Admin" asp-controller="CoverType" asp-action="Index">Cover Type</a>
-                                <a class="nav-link" asp-area="Admin" asp-controller="Product" asp-action="Index">Product</a>
-                                <div class="dropdown-divider"></div>
-                            </div>
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Content Management</a>
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" asp-area="Admin" asp-controller="Category" asp-action="Index">Category</a>
+                        <a class="dropdown-item" asp-area="Admin" asp-controller="CoverType" asp-action="Index">Cover Type</a>
+                        <a class="nav-link" asp-area="Admin" asp-controller="Product" asp-action="Index">Product</a>
+                        <div class="dropdown-divider"></div>
+                        </div>
                         </li>*@
                     </ul>
                     <partial name="_LoginPartial" />
                     @*<form class="d-flex">
-                        <input class="form-control me-sm-2" type="search" placeholder="Search">
-                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    <input class="form-control me-sm-2" type="search" placeholder="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
                     </form>*@
                 </div>
             </div>
